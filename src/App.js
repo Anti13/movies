@@ -15,10 +15,11 @@ const App = () => {
     const data = await response.json();
 
     setMovies(data.Search);
+
   };
 
   useEffect(() => {
-    searchMovies('John Wick 5');
+    searchMovies('Holmes');
   }, []);
 
   return (
@@ -33,7 +34,7 @@ const App = () => {
             setSearchTerm(e.target.value);
           }}
           onKeyDown={(e) => {
-            if (e.key == 'Enter') {
+            if (e.key === 'Enter') {
               searchMovies(searchTerm);
             }
           }}
